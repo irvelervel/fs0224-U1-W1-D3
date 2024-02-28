@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
+
+footer p {
+  /* selettore di discendenza */
+  /* va a selezionare SOLAMENTE tutti i tag <p> inseriti dentro un tag <footer> */
+  color: blue;
+}
+
+body {
+  background-color: bisque;
+  font-family: 'Klee One', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h4 {
+  color: green;
+}
+
+li {
+  /* TUTTI gli elementi di tutte le liste :( */
+}
+
+#enter-span {
+  /* con questo selettore sto andando a prendere PRECISAMENTE un UNICO elemento della pagina: l'elemento con id="enter-span" */
+  font-weight: 700; /* GRASSETTO */
+}
+
+span {
+  font-weight: 400; /* NON GRASSETTO */
+}
+/* NON IMPORTA che questa regola arrivi DOPO quella precedente, in ogni caso NON verrà applicata!
+perchè stiamo facendo "combattere" un selettore di id contro un selettore di tag... */
+
+.dog {
+  /* vado a selezionare TUTTI gli elementi della pagina dotati di class="dog" */
+  border-radius: 50px;
+}
+
+img {
+  border-radius: 0px;
+}

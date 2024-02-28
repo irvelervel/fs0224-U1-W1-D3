@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratica con i CSS</title>
+    <style>
+      p {
+        font-size: 1.2em; /* 1em è la dimensione standard del font nell'elemento padre di questo p */
+      }
+
+      /* attenzione! queste regole colpiscono correttamente l'h3, ma NON vengono applicate, perchè ci sono delle ALTRE
+        regole (applicate inline sull'elemento in HTML) che "barano" e vincono, data la loro altissima specificità */
+      h3 {
+        color: green;
+        font-weight: 400;
+      }
+
+      h4 {
+        color: red;
+      }
+    </style>
+
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- non dimentichiamoci di linkare il foglio css! -->
+  </head>
+  <body>
+    <header>
+      <h1>CSS Basics</h1>
+      <!-- metodi di assegnazione del CSS:
+        1) CSS INLINE -> applicare un attributo "style" direttamente ai tag HTML, con il valore delle regole desiderate
+        - sconsigliato, in quanto inquina l'HTML, obbliga alla ripetizione forzata e infonde alle regole una specificità enorme, anomala
+        2) CSS INCORPORATO ("embedded") -> consiste nella creazione di un tag <style></style> all'interno di <head> con all'interno
+          le vere e proprie regole CSS composte da "selettore { proprietà: valore }"
+        - un po' meglio: abbiamo comunque il problema che stiamo inserendo del CSS dentro un file .html, però almeno in una
+          sua sezione separata; inoltre le regole definite in un tag <style> non ricevono alcuna variazione nella specificità.
+        3) CSS ESTERNO -> consiste nella creazione di un file .css SEPARATO e collegato al nostro documento HTML con un tag
+          <link /> all'interno di <head>
+          Questo tag <link /> avrà bisogno di DUE attributi: "rel" con valore "stylesheet" e "href" con valore del percorso del file
+        - soluzione definitiva: abbiamo le regole di stile completamente SEPARATE dal foglio HTML, e possiamo addirittura
+          riutilizzare il foglio CSS su diversi documenti HTML
+          È anche possibile allegare DIVERSI documenti css ad un foglio html in modo da applicare in sequenza diversi "blocchi"
+          di regole, magari un foglio per le regole generiche di tutte le pagine del sito e un altro per delle regole
+          che si applicano solamente su una specifica pagina.
+        -->
+
+      <h3 style="color: orange; font-weight: 700">
+        Scopriamo come applicare delle regole di stile ad un documento HTML
+      </h3>
+    </header>
+    <main>
+      <p>
+        Se hai bisogno di inserire del contenuto temporaneo, giusto per riempire
+        la pagina, puoi usare questa tecnica: apri un tag p e scrivi dentro
+        "lorem" e premi <span id="enter-span">INVIO</span>
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit
+        optio ab debitis alias cumque, quod expedita quia deserunt nihil
+        delectus aliquid eum libero?
+        <span id="lorem-span">Qui, quaerat!</span> Et obcaecati illum ipsam!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum,
+        reiciendis ullam ratione sint doloribus tempora accusantium dicta quod
+        velit perspiciatis fugit. Voluptatibus dolor amet non iusto distinctio
+        quos, cupiditate dolorem.
+      </p>
+      <h4>Ecco un po' di immagini:</h4>
+      <div>
+        <img src="https://placedog.net/400" alt="cane random" class="dog" />
+      </div>
+      <div>
+        <img src="https://placedog.net/500" alt="cane random" class="dog" />
+      </div>
+      <div>
+        <img src="https://placedog.net/600" alt="cane random" />
+      </div>
+    </main>
+    <footer>
+      <p>EPICODE 2024</p>
+    </footer>
+  </body>
+</html>
